@@ -1,4 +1,4 @@
-*:after:before{
+*,*::after,*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,11 +15,10 @@ body{
     display:grid;
     place-items: center;
     height: 100vh;
-    background-color: var(--Very-Dark-Blue);
+    background-color: black;
 }
 main{
     width: 90%;
-
     gap: 2em;
     background-color: var(--Dark-Blue);
     color: #fff;
@@ -30,8 +29,26 @@ main{
     align-items: flex-start;
     flex-direction: column;
     padding: 2em;
+    gap: 3em;
 }
 
 .thankyou-card{
     display:none;
+}
+.star{
+    border: 1rem solid var(--Dark-Blue);
+    border-radius: 50%;
+}
+.rate{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+    list-style: none;
+}
+.title{
+    font-size: 1rem;
+}
+.support-text{
+    font-size:0.8rem
 }
