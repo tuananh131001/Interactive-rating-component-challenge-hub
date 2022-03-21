@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 :root{
+    --Orange: hsl(25, 97%, 53%);
     --White: hsl(0, 0%, 100%);
     --Medium-Grey: hsl(216, 12%, 54%);
     --Light-Grey: hsl(217, 12%, 63%);
@@ -15,13 +16,23 @@ body{
     display:grid;
     place-items: center;
     height: 100vh;
-    background-color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--Very-Dark-Blue);
+    color: var(--Light-Grey);
+    font-family: 'Overpass', sans-serif;
+    
 }
+/* card */
 main{
+
     width: 90%;
     gap: 2em;
     background-color: var(--Dark-Blue);
     color: #fff;
+    border-radius: 1rem;
     
 }
 .rating-card{
@@ -29,14 +40,16 @@ main{
     align-items: flex-start;
     flex-direction: column;
     padding: 2em;
-    gap: 3em;
+    gap: 2em;
 }
 
-.thankyou-card{
-    display:none;
-}
 .star{
-    border: 1rem solid var(--Dark-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:hsl(213, 19%, 25%);
     border-radius: 50%;
 }
 .rate{
@@ -47,8 +60,63 @@ main{
     list-style: none;
 }
 .title{
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 .support-text{
-    font-size:0.8rem
+    font-size:0.8rem;
+    color: var(--Light-Grey);
+}
+.rating-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+.rating-list .rate-button{
+    color: var(--Light-Grey);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: hsl(213, 19%, 25%);
+    border: none;
+}
+
+.rating-list .rate-button:hover{
+    color: var(--White);
+    background-color: var(--Orange);
+}
+
+.submit{
+    color: var(--White);
+    width: 100%;
+    background-color: var(--Orange);
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem ;
+    font-weight: 700;
+}
+.submit:hover{
+    cursor: pointer;
+    background-color: var(--White);
+    color: var(--Orange);
+}
+
+.thankyou-card{
+    background: var(--dark-blue);
+    padding: 4rem 3.5rem 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    transform: scale(0);
+    opacity: 0;
+    animation: fadeIn 500ms ease forwards;
+    animation-delay: 100ms;
+}
+
+.thankyou-card.hidden{
+    display: none;
 }
